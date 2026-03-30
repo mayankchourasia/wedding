@@ -6,20 +6,19 @@
 <title>Wedding Invitation | Neha & Shubham</title>
 
 <!-- Meta info -->
-<meta name="description" content="With the divine grace of the almighty, inviting you and your family to Neha & Shubham Wedding to be held on 1st May 2026 at Shree Swami Samarth Hall,Alandi Pune Pune from 6:30 PM onwards.">
+<meta name="description" content="With the divine grace of the almighty, inviting you and your family to Neha & Shubham Wedding to be held on 1st May 2026 at Shree Swami Samarth Hall,Alandi Pune from 6:30 PM onwards.">
 <meta name="author" content="Mayank Chourasia">
 
 <!-- Open Graph for WhatsApp / Social Sharing -->
 <meta property="og:title" content="Wedding Invitation | Neha & Shubham" />
-<meta property="og:description" content="With the divine grace of the almighty, we invite you to Neha & Shubham's wedding on 1st May 2026 at Shree Swami Samarth Hall,Alandi Pune from 6:30 PM onwards." />
-<meta property="og:image" content="./assets/img/Ganpati.jpg" />
+<meta property="og:description" content="With the divine grace of the almighty, we invite you to Neha & Shubham's wedding on 1st May 2026 at Shree Swami Samarth Hall,Alandi Pune  from 6:30 PM onwards." />
+<meta property="og:image" content="https://yourdomain.com/assets/img/Ganpati.jpg" />
 <meta property="og:url" content="https://yourdomain.com/" />
 <meta property="og:type" content="website" />
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Arvo&display=swap" rel="stylesheet">
 
 <style>
-/* RESET */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
@@ -28,7 +27,6 @@ body {
   overflow-x: hidden;
 }
 
-/* LOADER */
 #loader {
   position: fixed;
   width: 100%;
@@ -44,7 +42,6 @@ body {
   opacity: 1;
 }
 
-/* Ganpati Image */
 #loader img {
   width: 100px;
   height: 100px;
@@ -52,7 +49,6 @@ body {
   filter: drop-shadow(0 0 10px #ff4d6d);
 }
 
-/* Ganesh Text above image */
 .ganesh-text {
   font-family: 'Dancing Script', cursive;
   font-size: 30px;
@@ -67,7 +63,6 @@ body {
   animation: fadeInText 2s ease forwards;
 }
 
-/* Animations */
 @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
 @keyframes fadeInText { from {opacity:0;} to{opacity:1;} }
 @keyframes floatGanpati {
@@ -81,7 +76,6 @@ body {
 }
 @keyframes glow { from { text-shadow: 0 0 5px #ffccd5; } to { text-shadow: 0 0 20px #ff4d6d; } }
 
-/* HERO */
 .hero {
   height: 100vh;
   display:flex;
@@ -106,7 +100,6 @@ body {
 @keyframes typing { from { width: 0; } to { width: 22ch; } }
 .hero p { font-size:20px; margin-top:5px; }
 
-/* CARD */
 .glass-card {
   margin:20px auto;
   padding:30px;
@@ -118,7 +111,6 @@ body {
   box-shadow: 0 0 20px rgba(230,57,70,0.4);
 }
 
-/* COUNTDOWN */
 #countdown {
   display:flex;
   justify-content:center;
@@ -134,7 +126,6 @@ body {
 }
 #countdown span { font-size:25px; font-weight:bold; }
 
-/* BUTTON */
 .venue-btn {
   margin-top:20px;
   background:#e63946;
@@ -147,7 +138,6 @@ body {
 }
 .venue-btn:hover { background:#ff1a4d; transform: scale(1.05); }
 
-/* MUSIC */
 .music-btn {
   position:fixed;
   bottom:20px;
@@ -160,7 +150,6 @@ body {
   box-shadow:0 0 10px #ff4d6d;
 }
 
-/* HEARTS */
 .heart {
   position:fixed;
   bottom:-10px;
@@ -173,7 +162,6 @@ body {
   to { transform:translateY(-100vh) rotate(360deg); opacity:0; }
 }
 
-/* FOOTER DESIGNER */
 .footer-designer {
   text-align:center;
   margin:20px;
@@ -181,7 +169,6 @@ body {
   font-size:14px;
   color:#e63946;
 }
-
 .footer-designer a {
   color:#e63946;
   text-decoration:none;
@@ -189,6 +176,23 @@ body {
 }
 .footer-designer a:hover { text-decoration:underline; }
 
+/* GIF SECTION */
+.gif-section {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin:30px 0;
+}
+.gif-section img {
+  width:200px;
+  border-radius:15px;
+  box-shadow: 0 0 15px rgba(230,57,70,0.5);
+  transition: transform 0.3s ease;
+}
+.gif-section img:hover {
+  transform: scale(1.1);
+}
 </style>
 </head>
 
@@ -197,7 +201,7 @@ body {
 <!-- LOADER -->
 <div id="loader">
   <div class="ganesh-text">।। श्री गणेशाय नमः ।।</div>
-  <img src="./assets/img/ganpati.png" alt="Ganpati">
+  <img src="./assets/img/Ganpati.jpg" alt="Ganpati">
   <h1>Neha ❤️ Shubham</h1>
 </div>
 
@@ -211,11 +215,15 @@ body {
   </p>
 </section>
 
+<!-- BLESSING MESSAGE -->
+<section class="blessing-message" style="text-align:center; margin:20px 0; font-size:22px; color:#c9184a; font-family:'Dancing Script', cursive;">
+  🙏 Please come and give your blessings to us 🙏
+</section>
+
 <!-- MAIN CARD -->
 <div class="glass-card">
 <h2>You're Invited 💌</h2>
 
-<!-- COUNTDOWN -->
 <div id="countdown">
   <div><span id="days"></span><p>Days</p></div>
   <div><span id="hours"></span><p>Hours</p></div>
@@ -223,12 +231,19 @@ body {
   <div><span id="seconds"></span><p>Seconds</p></div>
 </div>
 
-<!-- VENUE -->
-<p>📍 Shree Swami Samarth Hall,Alandi Pune </p>
-<a href="https://maps.app.goo.gl/Rq9KoJcUi5mHVD4Y7" target="_blank">
+<p>📍 Shree Swami Samarth Hall,Alandi Pune <p>
+<a href="https://share.google/tkfPcJndMayGjJ2lv" target="_blank">
   <button class="venue-btn">View Venue</button>
 </a>
 </div>
+
+<!-- GIF SECTION (Second Page) -->
+<section class="gif-section">
+  <img src="./assets/img/jkl.gif" alt="GIF 1">
+  <img src="./assets/img/cvb.gif" alt="GIF 2">
+  <img src="./assets/img/bvc.gif" alt="GIF 3">
+  <img src="./assets/img/ggg.gif" alt="GIF 4">
+</section>
 
 <!-- MUSIC -->
 <div class="music-btn" onclick="toggleMusic()">🎵</div>
@@ -240,32 +255,26 @@ Designed by <a class="home" href="https://www.linkedin.com/in/mayank-chourasia/"
 </div>
 
 <script>
-
-/* MUSIC */
 function toggleMusic(){
   const audio = document.getElementById("audio");
   audio.paused ? audio.play() : audio.pause();
 }
 
-/* COUNTDOWN */
 const weddingDate = new Date("May 1, 2026 18:30:00").getTime();
 
 setInterval(()=>{
   const now = new Date().getTime();
   const gap = weddingDate - now;
-
   if(gap < 0){
     document.getElementById("countdown").innerHTML = "🎉 Wedding Started!";
     return;
   }
-
   document.getElementById("days").innerText = Math.floor(gap/(1000*60*60*24));
   document.getElementById("hours").innerText = Math.floor((gap/(1000*60*60))%24);
   document.getElementById("minutes").innerText = Math.floor((gap/(1000*60))%60);
   document.getElementById("seconds").innerText = Math.floor((gap/1000)%60);
 },1000);
 
-/* HEARTS */
 setInterval(()=>{
   const heart = document.createElement("div");
   heart.classList.add("heart");
@@ -275,7 +284,6 @@ setInterval(()=>{
   document.body.appendChild(heart);
   setTimeout(()=>heart.remove(),6000);
 },500);
-
 </script>
 
 </body>
