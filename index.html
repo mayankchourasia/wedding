@@ -11,129 +11,91 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 
-/* Background */
 body {
   font-family: 'Arvo', serif;
-  background: linear-gradient(rgba(255,240,243,0.6), rgba(255,229,236,0.6)),
-              url('./assets/img/background.jpg') no-repeat center center fixed;
+  background: url('./assets/img/background.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow-x: hidden;
+  color:#e63946;
 }
 
-/* Loader */
-#loader {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: rgba(255,255,255,0.3);
-  backdrop-filter: blur(6px);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:15px;
-  z-index:9999;
-  animation: fadeOut 2s ease 3s forwards;
-}
-@keyframes fadeOut { to { opacity:0; visibility:hidden; } }
-
-/* Hero Section */
+/* Full-page Hero */
 .hero {
-  height:100vh;
+  min-height:100vh;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
   text-align:center;
-  color:#e63946;
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(4px);
-  animation: fadeIn 2s ease 3s forwards;
-  opacity:0;
   padding:20px;
+  backdrop-filter: blur(5px);
 }
 
-/* Hero content */
-.hero-content {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:15px;
-}
-
-.hero h1 {
+/* Hero Text */
+.blessing-text {
   font-family:'Great Vibes', cursive;
-  font-size:60px;
-}
-
-.hero p { font-size:22px; margin:5px 0; }
-
-.hero-date-gif {
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  gap:20px;
-}
-
-.hero-date-gif p {
-  font-size:22px;
-  font-weight:bold;
-}
-
-.hero-date-gif img {
-  width:150px;
-  height:auto;
-  display:block;
-  border-radius:10px;
-}
-
-/* Blessing Message */
-.blessing { text-align:center; font-size:22px; color:#c9184a; margin-top:15px; }
-
-/* Invitation Section (Second Page) */
-.invitation-section {
-  text-align:center;
-  padding:30px 20px;
-  color:#c9184a;
-}
-
-.main-header {
-  font-family:'Great Vibes', cursive;
-  font-size:50px;
-  color:#e63946;
-  text-align:center;
+  font-size:36px;
   margin-bottom:10px;
-  text-shadow: 1px 1px 5px #ffccd5;
 }
 
-.main-title {
+.couple-names {
   font-family:'Great Vibes', cursive;
-  font-size:42px;
+  font-size:70px;
+  font-weight:bold;
+  margin-bottom:30px;
 }
 
-.divider { font-size:24px; margin:15px 0; }
+/* Date + GIF */
+.date-gif {
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
 
-.invite-line { font-size:18px; margin:10px 0; }
+.date-gif p {
+  font-size:28px;
+  font-weight:bold;
+  background: rgba(255,255,255,0.6);
+  padding:12px 18px;
+  border-radius:12px;
+}
 
-.wedding-time { font-size:20px; margin-top:5px; font-weight:bold; }
+.date-gif img {
+  width:160px;
+  height:auto;
+  border-radius:12px;
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Invitation text */
+.invite-text {
+  text-align:center;
+  font-size:20px;
+  margin:40px 0 25px 0;
+}
 
 /* Countdown Card */
-.glass-card {
-  margin:20px auto;
-  padding:30px;
+.countdown-card {
+  padding:25px 20px;
   border-radius:20px;
-  background:rgba(255,255,255,0.85);
-  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.85);
   text-align:center;
   max-width:500px;
   box-shadow: 0 0 20px rgba(230,57,70,0.4);
+  margin:20px auto;
 }
 
 #countdown {
   display:flex;
   justify-content:center;
   gap:10px;
-  margin-top:20px;
+  margin-top:15px;
 }
 #countdown div {
   background: linear-gradient(135deg,#ff4d6d,#ff99ac);
@@ -143,9 +105,8 @@ body {
 }
 #countdown span { font-weight:bold; }
 
-/* Venue Button */
 .venue-btn {
-  margin-top:20px;
+  margin-top:15px;
   background:#e63946;
   color:white;
   padding:10px 20px;
@@ -154,24 +115,15 @@ body {
   cursor:pointer;
 }
 
-/* Hearts Animation */
-.heart {
-  position:fixed;
-  bottom:-10px;
-  color:#ff4d6d;
-  animation:floatUp 6s linear infinite;
-}
-@keyframes floatUp { to { transform:translateY(-100vh); opacity:0; } }
-
 /* Remaining GIFs */
 .gif-section {
   display:flex;
   justify-content:center;
   gap:10px;
   flex-wrap:wrap;
-  margin:30px;
+  margin:30px 0;
 }
-.gif-section img { width:200px; border-radius:10px; }
+.gif-section img { width:200px; border-radius:12px; }
 
 /* Music Button */
 .music-btn {
@@ -186,49 +138,41 @@ body {
 }
 
 /* Footer */
-.footer {
-  text-align:center;
-  margin:20px;
-  color:#e63946;
+.footer { text-align:center; margin:20px; font-family:'Arvo', serif; }
+
+/* Floating Hearts */
+.heart {
+  position:fixed;
+  bottom:-10px;
+  color:#ff4d6d;
+  animation:floatUp 6s linear infinite;
 }
+@keyframes floatUp { to { transform:translateY(-100vh); opacity:0; } }
+
 </style>
 </head>
+
 <body>
 
-<!-- Loader -->
-<div id="loader">
-  <h2>।। श्री गणेशाय नमः ।।</h2>
-  <h1>Neha ❤️ Shubham</h1>
+<!-- Hero Section -->
+<div class="hero">
+  <div class="blessing-text">।। श्री गणेशाय नमः ।।</div>
+  <div class="couple-names">Neha ❤️ Shubham</div>
+
+  <!-- Date + GIF -->
+  <div class="date-gif">
+    <p>1st May 2026</p>
+    <img src="./assets/img/ggg.gif" alt="Couple GIF">
+  </div>
 </div>
 
-<!-- Hero Section (First Page) -->
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="couple-names">Neha ❤️ Shubham</h1>
-    <p>Are Getting Married</p>
-    <div class="hero-date-gif">
-      <p>1st May 2026</p>
-      <img src="./assets/img/ggg.gif" alt="Couple GIF">
-    </div>
-  </div>
-</section>
-
-<!-- Blessing Message -->
-<div class="blessing">🙏 Please come and give your blessings 🙏</div>
-
-<!-- Invitation Section (Second Page) -->
-<section class="invitation-section">
-  <h1 class="main-header">💌 You're Invited 💌</h1>
-  <h2 class="main-title">Wedding Invitation</h2>
-  <div class="divider">💖 💐 💖</div>
-  <p class="invite-line">
-    We joyfully request your presence to witness and celebrate the beginning of our lifelong journey together.
-  </p>
-  <p class="wedding-time">Wedding Time: 7:20 PM onwards</p>
-</section>
+<!-- Invitation Text -->
+<div class="invite-text">
+  We joyfully request your presence to witness and celebrate the beginning of our lifelong journey together.
+</div>
 
 <!-- Countdown Card -->
-<div class="glass-card">
+<div class="countdown-card">
   <h2>You're Invited 💌</h2>
   <div id="countdown">
     <div><span id="days"></span><p>Days</p></div>
@@ -243,11 +187,11 @@ body {
 </div>
 
 <!-- Remaining GIFs -->
-<section class="gif-section">
+<div class="gif-section">
   <img src="./assets/img/jkl.gif" alt="GIF 1">
   <img src="./assets/img/cvb.gif" alt="GIF 2">
   <img src="./assets/img/bvc.gif" alt="GIF 3">
-</section>
+</div>
 
 <!-- Music -->
 <div class="music-btn" onclick="toggleMusic()">🎵</div>
@@ -258,27 +202,22 @@ body {
 
 <script>
 function toggleMusic(){
-  const audio = document.getElementById("audio");
+  const audio=document.getElementById("audio");
   audio.paused ? audio.play() : audio.pause();
 }
 
-const weddingDate = new Date("May 1, 2026 19:20:00").getTime();
+const weddingDate=new Date("May 1, 2026 19:20:00").getTime();
 setInterval(()=>{
-  const now = new Date().getTime();
-  const gap = weddingDate - now;
-
-  if(gap < 0){
-    document.getElementById("countdown").innerHTML="🎉 Wedding Started!";
-    return;
-  }
-
+  const now=new Date().getTime();
+  const gap=weddingDate-now;
+  if(gap<0){document.getElementById("countdown").innerHTML="🎉 Wedding Started!"; return;}
   document.getElementById("days").innerText=Math.floor(gap/(1000*60*60*24));
   document.getElementById("hours").innerText=Math.floor((gap/(1000*60*60))%24);
   document.getElementById("minutes").innerText=Math.floor((gap/(1000*60))%60);
   document.getElementById("seconds").innerText=Math.floor((gap/1000)%60);
 },1000);
 
-/* Hearts Animation */
+/* Floating Hearts */
 setInterval(()=>{
   const heart=document.createElement("div");
   heart.classList.add("heart");
