@@ -5,26 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation | Neha & Shubham</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Arvo&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Arvo&display=swap" rel="stylesheet">
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 
-/* 🌸 GLOBAL BACKGROUND */
+/* Background for all pages */
 body {
   font-family: 'Arvo', serif;
-  background: linear-gradient(rgba(255,240,243,0.7), rgba(255,229,236,0.7)),
+  background: linear-gradient(rgba(255,240,243,0.6), rgba(255,229,236,0.6)),
               url('./assets/img/background.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow-x: hidden;
 }
 
-/* 📱 MOBILE FIX */
-@media(max-width:768px){
-  body { background-attachment: scroll; }
-}
-
-/* 🔥 LOADER */
+/* Loader */
 #loader {
   position: fixed;
   width: 100%;
@@ -41,7 +37,7 @@ body {
 }
 @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
 
-/* 🌟 HERO */
+/* Hero Section */
 .hero {
   height:100vh;
   display:flex;
@@ -54,17 +50,19 @@ body {
   backdrop-filter: blur(4px);
   animation: fadeIn 2s ease 3s forwards;
   opacity:0;
+  padding:20px;
 }
-@keyframes fadeIn { to{opacity:1;} }
-
 .hero h1 {
-  font-family:'Dancing Script', cursive;
+  font-family:'Great Vibes', cursive;
   font-size:60px;
 }
+.hero p { font-size:22px; margin:10px 0; }
+.hero img { width:250px; margin:20px 0; border-radius:15px; }
 
-.hero p { font-size:20px; }
+/* Blessing Message */
+.blessing { text-align:center; font-size:22px; color:#c9184a; margin-top:15px; }
 
-/* 💎 NEW PREMIUM SECTION */
+/* Premium Invitation Section */
 .invitation-section {
   text-align:center;
   padding:30px 20px;
@@ -72,34 +70,33 @@ body {
 }
 
 .main-title {
-  font-family:'Dancing Script', cursive;
+  font-family:'Great Vibes', cursive;
   font-size:42px;
 }
-
-.family-line { font-size:18px; }
 
 .divider {
   font-size:24px;
   margin:15px 0;
 }
 
-.invite-line {
-  font-size:18px;
-}
+.invite-line { font-size:18px; margin:10px 0; }
 
+/* Couple names single line */
 .couple-names {
-  font-family:'Dancing Script', cursive;
+  font-family:'Great Vibes', cursive;
   font-size:50px;
   margin:10px 0;
+  display:inline-block;
 }
 
-.wedding-date { font-size:20px; }
-
-.muhurta {
+/* Wedding Date & Time */
+.wedding-date, .wedding-time {
+  font-size:20px;
+  margin-top:5px;
   font-weight:bold;
 }
 
-/* 💌 CARD */
+/* Card */
 .glass-card {
   margin:20px auto;
   padding:30px;
@@ -111,7 +108,7 @@ body {
   box-shadow: 0 0 20px rgba(230,57,70,0.4);
 }
 
-/* ⏳ COUNTDOWN */
+/* Countdown */
 #countdown {
   display:flex;
   justify-content:center;
@@ -126,7 +123,7 @@ body {
 }
 #countdown span { font-weight:bold; }
 
-/* 📍 BUTTON */
+/* Venue Button */
 .venue-btn {
   margin-top:20px;
   background:#e63946;
@@ -137,18 +134,16 @@ body {
   cursor:pointer;
 }
 
-/* ❤️ HEARTS */
+/* Hearts */
 .heart {
   position:fixed;
   bottom:-10px;
   color:#ff4d6d;
   animation:floatUp 6s linear infinite;
 }
-@keyframes floatUp {
-  to { transform:translateY(-100vh); opacity:0; }
-}
+@keyframes floatUp { to { transform:translateY(-100vh); opacity:0; } }
 
-/* GIFS */
+/* GIF Section */
 .gif-section {
   display:flex;
   justify-content:center;
@@ -156,12 +151,9 @@ body {
   flex-wrap:wrap;
   margin:30px;
 }
-.gif-section img {
-  width:200px;
-  border-radius:10px;
-}
+.gif-section img { width:200px; border-radius:10px; }
 
-/* MUSIC */
+/* Music Button */
 .music-btn {
   position:fixed;
   bottom:20px;
@@ -173,7 +165,7 @@ body {
   cursor:pointer;
 }
 
-/* FOOTER */
+/* Footer */
 .footer {
   text-align:center;
   margin:20px;
@@ -181,73 +173,63 @@ body {
 }
 </style>
 </head>
-
 <body>
 
-<!-- LOADER -->
+<!-- Loader -->
 <div id="loader">
   <h2>।। श्री गणेशाय नमः ।।</h2>
   <h1>Neha ❤️ Shubham</h1>
 </div>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="hero">
-  <h1>Neha ❤️ Shubham</h1>
+  <h1 class="couple-names">Neha ❤️ Shubham</h1>
   <p>Are Getting Married</p>
+  <p>1st May 2026</p>
+  <img src="./assets/img/ggg.gif" alt="Couple GIF">
 </section>
 
-<!-- 🙏 MESSAGE -->
-<div style="text-align:center; font-size:22px; color:#c9184a;">
-  🙏 Please come and give your blessings 🙏
-</div>
+<!-- Blessing Message -->
+<div class="blessing">🙏 Please come and give your blessings 🙏</div>
 
-<!-- 💎 PREMIUM INVITATION -->
+<!-- Premium Invitation Section -->
 <section class="invitation-section">
   <h2 class="main-title">Wedding Invitation</h2>
-  <p class="family-line">Together with their families</p>
   <div class="divider">💖 💐 💖</div>
-
-  <p class="invite-line">Request the pleasure of your company</p>
-  <h1 class="couple-names">Neha ❤️ Shubham</h1>
-
-  <p class="wedding-date">1st May 2026</p>
-  <p class="muhurta">शुभ मुहूर्त: 7:20 PM onwards</p>
+  <p class="invite-line">
+    We joyfully request your presence to witness and celebrate the beginning of our lifelong journey together.
+  </p>
+  <p class="wedding-time">Wedding Time: 7:20 PM onwards</p>
 </section>
 
-<!-- 💌 CARD -->
+<!-- Countdown Card -->
 <div class="glass-card">
   <h2>You're Invited 💌</h2>
-
   <div id="countdown">
     <div><span id="days"></span><p>Days</p></div>
     <div><span id="hours"></span><p>Hours</p></div>
     <div><span id="minutes"></span><p>Minutes</p></div>
     <div><span id="seconds"></span><p>Seconds</p></div>
   </div>
-
   <p>📍 Shree Swami Samarth Hall, Alandi Pune</p>
-
   <a href="https://maps.app.goo.gl/B8oUsdgwx2kQxHFXA" target="_blank">
     <button class="venue-btn">View Venue</button>
   </a>
 </div>
 
-<!-- GIFS -->
+<!-- GIF Section (remaining GIFs) -->
 <section class="gif-section">
-  <img src="./assets/img/jkl.gif">
-  <img src="./assets/img/cvb.gif">
-  <img src="./assets/img/bvc.gif">
-  <img src="./assets/img/ggg.gif">
+  <img src="./assets/img/jkl.gif" alt="GIF 1">
+  <img src="./assets/img/cvb.gif" alt="GIF 2">
+  <img src="./assets/img/bvc.gif" alt="GIF 3">
 </section>
 
-<!-- MUSIC -->
+<!-- Music -->
 <div class="music-btn" onclick="toggleMusic()">🎵</div>
 <audio id="audio" src="./assets/mp3/song.mp3"></audio>
 
-<!-- FOOTER -->
-<div class="footer">
-  Designed by @MayankChourasia
-</div>
+<!-- Footer -->
+<div class="footer">Designed by @MayankChourasia</div>
 
 <script>
 function toggleMusic(){
@@ -256,7 +238,6 @@ function toggleMusic(){
 }
 
 const weddingDate = new Date("May 1, 2026 19:20:00").getTime();
-
 setInterval(()=>{
   const now = new Date().getTime();
   const gap = weddingDate - now;
@@ -272,7 +253,7 @@ setInterval(()=>{
   document.getElementById("seconds").innerText=Math.floor((gap/1000)%60);
 },1000);
 
-/* ❤️ Hearts */
+/* Hearts Animation */
 setInterval(()=>{
   const heart=document.createElement("div");
   heart.classList.add("heart");
@@ -283,6 +264,5 @@ setInterval(()=>{
   setTimeout(()=>heart.remove(),6000);
 },500);
 </script>
-
 </body>
 </html>
