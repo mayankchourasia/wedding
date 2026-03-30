@@ -10,64 +10,96 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 
-/* 🌸 BACKGROUND IMAGE ADDED */
+/* 🌸 GLOBAL BACKGROUND */
 body {
   font-family: 'Arvo', serif;
-  background: linear-gradient(rgba(255,240,243,0.75), rgba(255,229,236,0.75)),
-              url('./assets/img/Background.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(255,240,243,0.7), rgba(255,229,236,0.7)),
+              url('./assets/img/background.jpg') no-repeat center center fixed;
+  background-size: cover;
   overflow-x: hidden;
 }
 
-/* LOADER */
+/* 📱 MOBILE FIX */
+@media(max-width:768px){
+  body { background-attachment: scroll; }
+}
+
+/* 🔥 LOADER */
 #loader {
   position: fixed;
   width: 100%;
-  height: 100%;
-  background: #fff0f3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  z-index: 9999;
+  height: 100vh;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(6px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  z-index:9999;
   animation: fadeOut 2s ease 3s forwards;
 }
-
-#loader img {
-  width: 100px;
-  animation: float 3s infinite alternate;
-}
-
 @keyframes fadeOut { to { opacity:0; visibility:hidden; } }
-@keyframes float {
-  from { transform: translateY(0px); }
-  to { transform: translateY(-10px); }
-}
 
-/* HERO */
+/* 🌟 HERO */
 .hero {
-  height: 100vh;
+  height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
   text-align:center;
   color:#e63946;
-  backdrop-filter: blur(3px);
-  animation: fadeInContent 2s ease 3s forwards;
-  opacity: 0;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 2s ease 3s forwards;
+  opacity:0;
 }
+@keyframes fadeIn { to{opacity:1;} }
 
-@keyframes fadeInContent { to{opacity:1;} }
-
-.hero h1 { 
-  font-family:'Dancing Script', cursive; 
-  font-size:60px; 
+.hero h1 {
+  font-family:'Dancing Script', cursive;
+  font-size:60px;
 }
 
 .hero p { font-size:20px; }
 
-/* GLASS CARD */
+/* 💎 NEW PREMIUM SECTION */
+.invitation-section {
+  text-align:center;
+  padding:30px 20px;
+  color:#c9184a;
+}
+
+.main-title {
+  font-family:'Dancing Script', cursive;
+  font-size:42px;
+}
+
+.family-line { font-size:18px; }
+
+.divider {
+  font-size:24px;
+  margin:15px 0;
+}
+
+.invite-line {
+  font-size:18px;
+}
+
+.couple-names {
+  font-family:'Dancing Script', cursive;
+  font-size:50px;
+  margin:10px 0;
+}
+
+.wedding-date { font-size:20px; }
+
+.muhurta {
+  font-weight:bold;
+}
+
+/* 💌 CARD */
 .glass-card {
   margin:20px auto;
   padding:30px;
@@ -79,64 +111,57 @@ body {
   box-shadow: 0 0 20px rgba(230,57,70,0.4);
 }
 
-/* COUNTDOWN */
+/* ⏳ COUNTDOWN */
 #countdown {
   display:flex;
   justify-content:center;
-  gap:15px;
+  gap:10px;
   margin-top:20px;
 }
 #countdown div {
-  background: linear-gradient(135deg, #ff4d6d, #ff99ac);
-  padding:15px;
-  border-radius:15px;
+  background: linear-gradient(135deg,#ff4d6d,#ff99ac);
+  padding:12px;
+  border-radius:10px;
   color:white;
 }
-#countdown span {
-  font-size:22px;
-  font-weight:bold;
-}
+#countdown span { font-weight:bold; }
 
-/* BUTTON */
+/* 📍 BUTTON */
 .venue-btn {
   margin-top:20px;
   background:#e63946;
   color:white;
-  padding:12px 25px;
+  padding:10px 20px;
   border:none;
-  border-radius:25px;
+  border-radius:20px;
   cursor:pointer;
 }
-.venue-btn:hover { background:#ff1a4d; }
 
-/* HEART ANIMATION */
+/* ❤️ HEARTS */
 .heart {
   position:fixed;
   bottom:-10px;
   color:#ff4d6d;
-  animation: floatUp 6s linear infinite;
+  animation:floatUp 6s linear infinite;
 }
 @keyframes floatUp {
-  to {
-    transform:translateY(-100vh);
-    opacity:0;
-  }
+  to { transform:translateY(-100vh); opacity:0; }
 }
 
-/* GIF SECTION */
+/* GIFS */
 .gif-section {
   display:flex;
-  flex-wrap:wrap;
   justify-content:center;
-  gap:15px;
+  gap:10px;
+  flex-wrap:wrap;
   margin:30px;
 }
 .gif-section img {
   width:200px;
-  border-radius:15px;
+  border-radius:10px;
 }
 
-/* MUSIC BUTTON */
+/* MUSIC */
 .music-btn {
   position:fixed;
   bottom:20px;
@@ -148,6 +173,7 @@ body {
   cursor:pointer;
 }
 
+/* FOOTER */
 .footer {
   text-align:center;
   margin:20px;
@@ -161,7 +187,6 @@ body {
 <!-- LOADER -->
 <div id="loader">
   <h2>।। श्री गणेशाय नमः ।।</h2>
-  <img src="./assets/img/Ganpati.jpg">
   <h1>Neha ❤️ Shubham</h1>
 </div>
 
@@ -169,16 +194,27 @@ body {
 <section class="hero">
   <h1>Neha ❤️ Shubham</h1>
   <p>Are Getting Married</p>
-  <p>1st May 2026</p>
-  <p>शुभ मुहूर्त: 7:20 PM</p>
 </section>
 
-<!-- MESSAGE -->
+<!-- 🙏 MESSAGE -->
 <div style="text-align:center; font-size:22px; color:#c9184a;">
   🙏 Please come and give your blessings 🙏
 </div>
 
-<!-- CARD -->
+<!-- 💎 PREMIUM INVITATION -->
+<section class="invitation-section">
+  <h2 class="main-title">Wedding Invitation</h2>
+  <p class="family-line">Together with their families</p>
+  <div class="divider">💖 💐 💖</div>
+
+  <p class="invite-line">Request the pleasure of your company</p>
+  <h1 class="couple-names">Neha ❤️ Shubham</h1>
+
+  <p class="wedding-date">1st May 2026</p>
+  <p class="muhurta">शुभ मुहूर्त: 7:20 PM onwards</p>
+</section>
+
+<!-- 💌 CARD -->
 <div class="glass-card">
   <h2>You're Invited 💌</h2>
 
@@ -226,25 +262,24 @@ setInterval(()=>{
   const gap = weddingDate - now;
 
   if(gap < 0){
-    document.getElementById("countdown").innerHTML = "🎉 Wedding Started!";
+    document.getElementById("countdown").innerHTML="🎉 Wedding Started!";
     return;
   }
 
-  document.getElementById("days").innerText = Math.floor(gap/(1000*60*60*24));
-  document.getElementById("hours").innerText = Math.floor((gap/(1000*60*60))%24);
-  document.getElementById("minutes").innerText = Math.floor((gap/(1000*60))%60);
-  document.getElementById("seconds").innerText = Math.floor((gap/1000)%60);
+  document.getElementById("days").innerText=Math.floor(gap/(1000*60*60*24));
+  document.getElementById("hours").innerText=Math.floor((gap/(1000*60*60))%24);
+  document.getElementById("minutes").innerText=Math.floor((gap/(1000*60))%60);
+  document.getElementById("seconds").innerText=Math.floor((gap/1000)%60);
 },1000);
 
-/* Floating Hearts */
+/* ❤️ Hearts */
 setInterval(()=>{
-  const heart = document.createElement("div");
+  const heart=document.createElement("div");
   heart.classList.add("heart");
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random()*100+"vw";
-  heart.style.fontSize = (Math.random()*20+10)+"px";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*20+10)+"px";
   document.body.appendChild(heart);
-
   setTimeout(()=>heart.remove(),6000);
 },500);
 </script>
